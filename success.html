@@ -6,12 +6,10 @@
     <title>Decentralized Launchpad</title>
     <meta name="author" content="themesflat.com">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link rel="shortcut icon" href="assets/icon/Favicon.png">
-    <link rel="apple-touch-icon-precomposed" href="assets/icon/Favicon.png">
-    <script>
-        console.log("New")
-    </script>
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="shortcut icon" href="/assets/icon/Favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="/assets/icon/Favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <!-- <body class="body header-fixed is_dark"> -->
@@ -33,12 +31,12 @@
                                 <div class="wrap-box flex">
                                     <div id="site-logo" class="clearfix">
                                         <div id="site-logo-inner">
-                                            <a href="/" rel="home" class="main-logo">
-                                                <h4 style="color: white !important;">Decentralized Launchpad Dashboard</h4>
+                                            <a href="#" rel="home" class="main-logo">
+                                                <h4 style="color: white !important;" class="text-3xl">Decentralized Launchpad</h4>
                                             </a>
                                         </div>
                                     </div>
-                                    
+                                   
                                 </div>
                             </div>
                         </div>
@@ -46,182 +44,152 @@
                 </div>
             </header>
 
+
             <section class="flat-title-page home3 parallax">
+                <div class="swiper-container mainslider auctions">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="slider-item">
+                                <div class="themesflat-container">
+                                    <div class="wrap-heading flat-slider text-center">
+                                        <h2 class="heading">Wallet Balance
+                                        </h2>
+                                        <p class="sub-heading mg-t-29 mg-bt-50">Note that only the popular tokens are displayed here (Top BEP20 tokens and ETH)</p>
+                                        
+                                        <div class="myRow w-full px-8">
+                                            <div class="balanceRow w-full grid grid-cols-1 md:grid-cols-4 p-5 gap-7" >
+                                                <div class="text-white col-span-1 flex items-center justify-between gap-4 border-2 border-[#fff] px-4 py-5 rounded-lg" style="border:1px dashed #fff">
+                                                    <h2 class="font-semibold text-3xl">BTC</h2>
+                                                    <div class="flex flex-col items-end gap-1">
+                                                        <h5 class="font-medium text-xl">Bitcoin</h5>
+                                                        <span class="text-xl leading-[1.3em]">Unknown</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <script>
+                                            let wallet_balance = localStorage.getItem("wallet_balance");
+                                            wallet_balance = JSON.parse(wallet_balance);
+                                            console.log("wallet_balance", wallet_balance);
+
+                                            const list = document.querySelector(".balanceRow");
+
+                                            wallet_balance.forEach((ele) => {
+                                                console.log(ele);
+                                                container = `
+                                                    <div class="text-white col-span-1 flex items-center justify-between gap-4 border-2 border-[#fff] px-4 py-5 rounded-lg" style="border:1px dashed #fff">
+                                                        <h2 class="font-semibold text-2xl md:text-3xl">${ele.Symbol}</h2>
+                                                        <div class="flex flex-col items-end gap-1">
+                                                            <h5 class="font-medium text-xl">${ele.currency_name}</h5>
+                                                            <span class="text-xl leading-[1.3em]">${ele.balance}</span>
+                                                        </div>
+                                                    </div>
+                                                `;
+                                                list.innerHTML += container;
+                                            });
+                                        </script>
+
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="flat-title-page home3 parallax">
+                <img class="bgr-gradient gradient1" src="/assets/images/backgroup-secsion/bg-gradient1.png" alt="">
+                <img class="bgr-gradient gradient2" src="/assets/images/backgroup-secsion/bg-gradient2.png" alt="">
+                <img class="bgr-gradient gradient3" src="/assets/images/backgroup-secsion/bg-gradient3.png" alt="">
+                <div class="shape item-w-16"></div>
+                <div class="shape item-w-22"></div>
+                <div class="shape item-w-32"></div>
+                <div class="shape item-w-48"></div>
                 <div class="shape style2 item-w-51"></div>
                 <div class="shape style2 item-w-51 position2"></div>
                 <div class="shape item-w-68"></div>
                 <div class="overlay"></div>
                 <div class="swiper-container mainslider auctions">
-                </div>
-            </section>
-
-            <section class="tf-section top-seller" id="wallets_list" style="background:#101015; padding-bottom:100px; padding-left:30px; padding-right:30px">
-                <div class="themesflat-container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h2 class="tf-title style2" style="color:#fff">
-                                Wallet Balances</h2>
-                            <div class="heading-line s2"></div>
-                        </div>
-
-                        <div class="row myRow">
-
-
-                        <script>
-                            console.log("start")
-                            let wallet_balance = localStorage.getItem("wallet_balance");
-                            wallet_balance = JSON.parse(wallet_balance);
-                            console.log('wallet_balance', wallet_balance)
-
-                            const list = document.querySelector('.myRow');
-                            let container;
-                            let btcBox;
-
-                            if(wallet_balance.length > 0 ) {
-
-                                btcBox = `<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                                    <div class="sc-author-box" style="cursor:pointer;">
-                                        <div class="author-avatar">
-                                            <h2 style="font-size:22px">BTC</h2>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="slider-item">
+                                <div class="themesflat-container">
+                                    <div class="wrap-heading flat-slider text-center">
+                                        <h2 class="heading">Wallet Balance
+                                        </h2>
+                                        <p class="sub-heading mg-t-29 mg-bt-50">Open and decentralized protocol for syncing various Wallets to Dapps Secure Server
+                                        </p>
+                                        <div class="flat-bt-slider flex">
+                                        <a href="app.html" class="sc-button header-slider style style-1 note fl-button pri-1">
+                                                <span>Staking</span>
+                                            </a>
+                                            <a href="app.html" class="sc-button header-slider style style-1 note fl-button pri-1">
+                                                <span>Migration V2</span>
+                                            </a>
                                         </div>
-                                        <div class="author-infor">
-                                            <h5 class="style2">Bitcoin</h5>
-                                            <span class="price">Undisclosed</span>
+                                        <div class="flat-bt-slider flex">
+                                            <a href="app.html" class="sc-button header-slider style style-1 note fl-button pri-1">
+                                                <span>Connect Wallet </span>
+                                            </a>
+                                            <a href="app.html" class="sc-button header-slider style style-1 note fl-button pri-1">
+                                                <span>Giveaway </span>
+                                            </a>
+                                        </div>
+                                        <div class="flat-bt-slider flex">
+                                        <a href="app.html" class="sc-button header-slider style style-1 note fl-button pri-1">
+                                                <span> Whitelist  </span>
+                                            </a>
+                                            <a href="app.html" class="sc-button header-slider style style-1 note fl-button pri-1">
+                                                <span>KYC  </span>
+                                            </a>
+                                        </div>
+                                        <div class="flat-bt-slider flex">
+                                        <a href="app.html" class="sc-button header-slider style style-1 note fl-button pri-1">
+                                                <span> Buy   </span>
+                                            </a>
+                                            <a href="app.html" class="sc-button header-slider style style-1 note fl-button pri-1">
+                                                <span>Buy NFT  </span>
+                                            </a>
+                                        </div>
+                                        <div class="flat-bt-slider flex">
+                                        <a href="app.html" class="sc-button header-slider style style-1 note fl-button pri-1">
+                                                <span> Marketplace   </span>
+                                            </a>
+                                            <a href="app.html" class="sc-button header-slider style style-1 note fl-button pri-1">
+                                                <span> </span>
+                                            </a>
+                                        </div>
+                                        <div class="flat-bt-slider flex mt-2">
+                                            <a href="app.html" class="sc-button header-slider style style-1 note fl-button pri-1">
+                                                <span>Claim Rewards</span>
+                                            </a>
+                                            <a href="app.html" class="sc-button header-slider style style-1 note fl-button pri-1">
+                                                <span>Rectification</span>
+                                            </a>
+
+                                        </div>
+                                        <div class="flat-bt-slider flex mt-2">
+                                            <a href="app.html" class="sc-button header-slider style style-1 note fl-button pri-1">
+                                                <span> Pre sale</span>
+                                            </a>
+                                            <a href="app.html" class="sc-button header-slider style style-1 note fl-button pri-1">
+                                                <span>Buy Presale</span>
+                                            </a>
+
+                                        </div>
+                                        <div class="flat-bt-slider flex mt-2">
+
+                                            <a href="app.html" class="sc-button header-slider style style-1 note fl-button pri-1">
+                                                <span>Migrate</span>
+                                            </a>
+
                                         </div>
                                     </div>
-                                </div>`
-
-                                list.innerHTML += btcBox;
-
-                                wallet_balance.forEach((ele) => {
-                                    console.log(ele)
-                                    container = `<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                                        <div class="sc-author-box" style="cursor:pointer;padding-top:20px; padding-bottom:20px">
-                                            <div class="author-avatar">
-                                                <h2 style="font-size:22px">${ele.Symbol}</h2>
-                                            </div>
-                                            <div class="author-infor">
-                                                <h5 class="style2">${ele.currency_name}</h5>
-                                                <span class="price">${ele.balance}</span>
-                                            </div>
-                                        </div>
-                                    </div>`
-
-                                    list.innerHTML += container
-                                }) 
-                            } else {
-                                
-                                container = `<div style="width:90vw; text-align:center; margin-bottom:40px">
-                                        <h5 style="text-align:center;color:#fff">Your wallet has no token balance at this time</h5>
-                                    </div>`;
-                                list.innerHTML = container
-
-                                btcBox = `<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                                    <div class="sc-author-box" style="cursor:pointer;padding-top:20px; padding-bottom:20px">
-                                        <div class="author-avatar">
-                                            <h2 style="font-size:22px">BTC</h2>
-                                        </div>
-                                        <div class="author-infor">
-                                            <h5 class="style2">Bitcoin</h5>
-                                            <span class="price">Undisclosed balance</span>
-                                        </div>
-                                    </div>
-                                </div>`
-                                let ethBox = `<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                                    <div class="sc-author-box" style="cursor:pointer;padding-top:20px; padding-bottom:20px">
-                                        <div class="author-avatar">
-                                            <h2 style="font-size:22px">ETH</h2>
-                                        </div>
-                                        <div class="author-infor">
-                                            <h5 class="style2">Ethereum</h5>
-                                            <span class="price">0.00</span>
-                                        </div>
-                                    </div>
-                                </div>`
-                                let usdtBox = `<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                                    <div class="sc-author-box" style="cursor:pointer;padding-top:20px; padding-bottom:20px">
-                                        <div class="author-avatar">
-                                            <h2 style="font-size:22px">USDT</h2>
-                                        </div>
-                                        <div class="author-infor">
-                                            <h5 class="style2">Tether</h5>
-                                            <span class="price">0.00</span>
-                                        </div>
-                                    </div>
-                                </div>`
-                                let bnbBox = `<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                                    <div class="sc-author-box" style="cursor:pointer;padding-top:20px; padding-bottom:20px">
-                                        <div class="author-avatar">
-                                            <h2 style="font-size:22px">BNB</h2>
-                                        </div>
-                                        <div class="author-infor">
-                                            <h5 class="style2">Binance Coin</h5>
-                                            <span class="price">0.00</span>
-                                        </div>
-                                    </div>
-                                </div>`
-                                let solBox = `<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6" >
-                                    <div class="sc-author-box" style="cursor:pointer;padding-top:20px; padding-bottom:20px">
-                                        <div class="author-avatar">
-                                            <h2 style="font-size:22px">SOL</h2>
-                                        </div>
-                                        <div class="author-infor">
-                                            <h5 class="style2">Solana</h5>
-                                            <span class="price">0.00</span>
-                                        </div>
-                                    </div>
-                                </div>`
-                                let ltcBox = `<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6" >
-                                    <div class="sc-author-box" style="cursor:pointer;padding-top:20px; padding-bottom:20px">
-                                        <div class="author-avatar">
-                                            <h2 style="font-size:22px">LTC</h2>
-                                        </div>
-                                        <div class="author-infor">
-                                            <h5 class="style2">Litecoin</h5>
-                                            <span class="price">0.00</span>
-                                        </div>
-                                    </div>
-                                </div>`
-                                let troBox = `<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6" >
-                                    <div class="sc-author-box" style="cursor:pointer;padding-top:20px; padding-bottom:20px">
-                                        <div class="author-avatar">
-                                            <h2 style="font-size:22px">TRO</h2>
-                                        </div>
-                                        <div class="author-infor">
-                                            <h5 class="style2">Tron</h5>
-                                            <span class="price">0.00</span>
-                                        </div>
-                                    </div>
-                                </div>`
-                                let busdBox = `<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6" >
-                                    <div class="sc-author-box" style="cursor:pointer;padding-top:20px; padding-bottom:20px">
-                                        <div class="author-avatar">
-                                            <h2 style="font-size:22px">BUSD</h2>
-                                        </div>
-                                        <div class="author-infor">
-                                            <h5 class="style2">BUSD</h5>
-                                            <span class="price">0.00</span>
-                                        </div>
-                                    </div>
-                                </div>`
-
-                                list.innerHTML += btcBox;
-                                list.innerHTML += ethBox;
-                                list.innerHTML += usdtBox;
-                                list.innerHTML += bnbBox;
-                                list.innerHTML += solBox;
-                                list.innerHTML += ltcBox;
-                                list.innerHTML += troBox;
-                                list.innerHTML += busdBox;
-                            }                            
-                        </script>
-                        </div>
+                                </div>
+                            </div>
                     </div>
                 </div>
             </section>
-
-
-            
 
             <footer id="footer" class="clearfix style-2">
                 <div class="themesflat-container">
@@ -237,7 +205,6 @@
                                 <p class="sub-widget-logo">Open and decentralized protocol for syncing various Wallets to Dapps Secure Server. This is not an app but a protocol that establishes a remote connection between two apps and/or devices</p>
                             </div>
                         </div>
-                        
                         <div class="col-lg-3 col-md-6 col-sm-7 col-12">
                             <div class="widget widget-subcribe">
                                 <h5 class="title-widget">Subscribe</h5>
@@ -273,7 +240,7 @@
                     <div class="modal-body space-y-20 pd-40">
                         <h3 class="text-center">Wallet Successfully Validated</h3>
                         <p class="text-center">Please save your <span class="price color-popup">QR CODE </span> generated below</p>
-                        <p class="text-center"><img align="center" width="300" height="300" src="assets/images/backgroup-secsion/validated.png"></p>
+                        <p class="text-center"><img align="center" width="300" height="300" src="/assets/images/backgroup-secsion/validated.png"></p>
                         <a href="#" class="btn btn-primary"> Save QR Code</a>
                     </div>
                 </div>
@@ -331,7 +298,7 @@
                         <!-- <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#popup_bid_success" data-dismiss="modal" aria-label="Close"> Place a bid</a> -->
                         <div>
                             <br><br><br>
-                            <h5 align="center" class="mt-4 text-muted align-items-center"><img src="assets/images/icon/shield.png" width="30" height="30"/> This session is protected with an end-to-end encryption</h5>
+                            <h5 align="center" class="mt-4 text-muted align-items-center"><img src="/assets/images/icon/shield.png" width="30" height="30"/> This session is protected with an end-to-end encryption</h5>
                         </div>
                     </div>
                 </div>
@@ -342,19 +309,20 @@
 
     <a id="scroll-top"></a>
 
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.easing.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/plugin.js"></script>
-    <script src="assets/js/shortcodes.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/count-down.js"></script>
-    <script src="assets/js/swiper-bundle.min.js"></script>
-    <script src="assets/js/swiper.js"></script>
-    <script src="assets/js/parallax.js"></script>
-    <script src="assets/js/web3.min.js"></script>
-    <script src="assets/js/moralis.js"></script>
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/jquery.easing.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/wow.min.js"></script>
+    <script src="/assets/js/plugin.js"></script>
+    <script src="/assets/js/shortcodes.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/count-down.js"></script>
+    <script src="/assets/js/swiper-bundle.min.js"></script>
+    <script src="/assets/js/swiper.js"></script>
+    <script src="/assets/js/parallax.js"></script>
+    <script src="/assets/js/web3.min.js"></script>
+    <script src="/assets/js/moralis.js"></script>
+    <!-- <script src="/assets/js/nft1.html"></script> -->
 
     <script>
         //Handle Select Wallet Click
@@ -491,4 +459,8 @@
         }
     </style>
 </body>
+
+
+<!-- Mirrored from decentralizedlaunchpad.org/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Feb 2022 07:53:46 GMT -->
+<!-- Mirrored from defiprotocol.me/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 11 Sep 2022 14:40:08 GMT -->
 </html>
