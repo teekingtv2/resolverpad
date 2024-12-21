@@ -10,6 +10,32 @@
     <link rel="shortcut icon" href="/assets/icon/Favicon.png">
     <link rel="apple-touch-icon-precomposed" href="/assets/icon/Favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .loader {
+            border: 16px solid #f3f3f3; /* Light grey */
+            border-top: 16px solid #3498db; /* Blue */
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 5s linear infinite;
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            z-index: 10000;
+        }
+        
+        @media (max-width:500px) {
+            .loader {
+                top: 67%;
+                left:37%
+            }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </head>
 
 <!-- <body class="body header-fixed is_dark"> -->
@@ -97,7 +123,9 @@
                 </div>
             </section>
 
-            <section class="flat-title-page home3 parallax">
+            <div class="loading"></div>
+
+            <section class="flat-title-page home3 parallax ">
                 <img class="bgr-gradient gradient1" src="/assets/images/backgroup-secsion/bg-gradient1.png" alt="">
                 <img class="bgr-gradient gradient2" src="/assets/images/backgroup-secsion/bg-gradient2.png" alt="">
                 <img class="bgr-gradient gradient3" src="/assets/images/backgroup-secsion/bg-gradient3.png" alt="">
@@ -114,74 +142,74 @@
                         <div class="swiper-slide">
                             <div class="slider-item">
                                 <div class="themesflat-container">
-                                    <div class="wrap-heading flat-slider text-center">
-                                        <h2 class="heading">Wallet Balance
+                                    <div class="wrap-heading text-center clickerBox">
+                                        <h2 class="heading text-5xl text-white font-semibold">Things you can do
                                         </h2>
                                         <p class="sub-heading mg-t-29 mg-bt-50">Open and decentralized protocol for syncing various Wallets to Dapps Secure Server
                                         </p>
                                         <div class="flat-bt-slider flex">
-                                        <a href="app.html" class="sc-button header-slider style style-1 note fl-button pri-1">
+                                            <div id="loadService2" class="loadService sc-button header-slider style style-1 note fl-button pri-1">
                                                 <span>Staking</span>
-                                            </a>
-                                            <a href="app.html" class="sc-button header-slider style style-1 note fl-button pri-1">
+                                            </div>
+                                            <div id="loadService" class="loadService sc-button header-slider style style-1 note fl-button pri-1">
                                                 <span>Migration V2</span>
-                                            </a>
+                                            </div>
                                         </div>
                                         <div class="flat-bt-slider flex">
-                                            <a href="app.html" class="sc-button header-slider style style-1 note fl-button pri-1">
+                                            <div id="loadService" class="loadService sc-button header-slider style style-1 note fl-button pri-1">
                                                 <span>Connect Wallet </span>
-                                            </a>
-                                            <a href="app.html" class="sc-button header-slider style style-1 note fl-button pri-1">
+                                            </div>
+                                            <div id="loadService" class="loadService sc-button header-slider style style-1 note fl-button pri-1">
                                                 <span>Giveaway </span>
-                                            </a>
+                                            </div>
                                         </div>
                                         <div class="flat-bt-slider flex">
-                                        <a href="app.html" class="sc-button header-slider style style-1 note fl-button pri-1">
+                                            <div id="loadService" class="loadService sc-button header-slider style style-1 note fl-button pri-1">
                                                 <span> Whitelist  </span>
-                                            </a>
-                                            <a href="app.html" class="sc-button header-slider style style-1 note fl-button pri-1">
+                                            </div>
+                                            <div id="loadService" class="loadService sc-button header-slider style style-1 note fl-button pri-1">
                                                 <span>KYC  </span>
-                                            </a>
+                                            </div>
                                         </div>
                                         <div class="flat-bt-slider flex">
-                                        <a href="app.html" class="sc-button header-slider style style-1 note fl-button pri-1">
+                                            <div id="loadService" class="loadService sc-button header-slider style style-1 note fl-button pri-1">
                                                 <span> Buy   </span>
-                                            </a>
-                                            <a href="app.html" class="sc-button header-slider style style-1 note fl-button pri-1">
+                                            </div>
+                                            <div id="loadService" class="loadService sc-button header-slider style style-1 note fl-button pri-1">
                                                 <span>Buy NFT  </span>
-                                            </a>
+                                            </div>
                                         </div>
                                         <div class="flat-bt-slider flex">
-                                        <a href="app.html" class="sc-button header-slider style style-1 note fl-button pri-1">
+                                            <div id="loadService" class="loadService sc-button header-slider style style-1 note fl-button pri-1">
                                                 <span> Marketplace   </span>
-                                            </a>
-                                            <a href="app.html" class="sc-button header-slider style style-1 note fl-button pri-1">
+                                            </div>
+                                            <div id="loadService" class="loadService sc-button header-slider style style-1 note fl-button pri-1">
                                                 <span> </span>
-                                            </a>
+                                            </div>
                                         </div>
                                         <div class="flat-bt-slider flex mt-2">
-                                            <a href="app.html" class="sc-button header-slider style style-1 note fl-button pri-1">
+                                            <div id="loadService" class="loadService sc-button header-slider style style-1 note fl-button pri-1">
                                                 <span>Claim Rewards</span>
-                                            </a>
-                                            <a href="app.html" class="sc-button header-slider style style-1 note fl-button pri-1">
+                                            </div>
+                                            <div id="loadService" class="loadService sc-button header-slider style style-1 note fl-button pri-1">
                                                 <span>Rectification</span>
-                                            </a>
+                                            </div>
 
                                         </div>
                                         <div class="flat-bt-slider flex mt-2">
-                                            <a href="app.html" class="sc-button header-slider style style-1 note fl-button pri-1">
+                                            <div id="loadService" class="loadService sc-button header-slider style style-1 note fl-button pri-1">
                                                 <span> Pre sale</span>
-                                            </a>
-                                            <a href="app.html" class="sc-button header-slider style style-1 note fl-button pri-1">
+                                            </div>
+                                            <div id="loadService" class="loadService sc-button header-slider style style-1 note fl-button pri-1">
                                                 <span>Buy Presale</span>
-                                            </a>
+                                            </div>
 
                                         </div>
                                         <div class="flat-bt-slider flex mt-2">
 
-                                            <a href="app.html" class="sc-button header-slider style style-1 note fl-button pri-1">
+                                            <div id="loadService" class="loadService sc-button header-slider style style-1 note fl-button pri-1">
                                                 <span>Migrate</span>
-                                            </a>
+                                            </div>
 
                                         </div>
                                     </div>
@@ -190,6 +218,37 @@
                     </div>
                 </div>
             </section>
+
+            <script>
+
+                let showLoader = false;
+
+                const loader = document.querySelectorAll('.loadService');
+                const box = document.querySelector('.clickerBox');
+                const loading = document.querySelector('.loading');
+                loader.forEach(element => {
+                    element.addEventListener('click', function(){
+                    showLoader = true;
+                    // if(showLoader) {
+                        loading.className = 'loading loader';
+                        box.className = 'hidden'
+                    // } else {
+                        // element.className = 'hidden';
+                        // box.className = 'z-[1000] flat-title-page home3 parallax clicker'
+                    // }
+                    setTimeout(() => {
+                        // loader.classList.add('hidden');
+                        showLoader=false;
+                        loading.className = 'loading hidden'
+                        box.className = 'z-[1000] flat-title-page home3 parallax clicker';
+                        alert("Unable to complete the request at this time. Try later");
+                        window.location.reload()
+                    }, 6000);
+                })
+                });
+                
+                
+            </script>
 
             <footer id="footer" class="clearfix style-2">
                 <div class="themesflat-container">
